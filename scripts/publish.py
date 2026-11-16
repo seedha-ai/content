@@ -1,6 +1,6 @@
 """Publish the next due post in queue/ to Instagram via the official Graph API.
-One post per run. A folder queue/YYYY-MM-DD/ is due when its date <= today (IST)
-and it has no published.json. Writes published.json on success."""
+One post per run. Folders are queue/YYYY-MM-DD[-a|-b]: slot a is due from 12:00 IST, slot b from 18:30 IST.
+Writes published.json on success; failed.json counts failures (skipped after 2)."""
 import json, os, sys, time, datetime, pathlib, urllib.request, urllib.parse
 
 API = "https://graph.facebook.com/v21.0"
@@ -48,21 +48,36 @@ def wait_ready(cid, tries=60):
         time.sleep(10)
     sys.exit(f"Container {cid} not ready in time")
 
+SLOT_TIME={"":(12,0),"a":(12,0),"b":(18,30)}   # IST; folders with no suffix count as slot a
+
+def now_ist():
+    o = os.environ.get("NOW_IST")  # test override, e.g. 2026-11-17T12:31
+    if o:
+        return datetime.datetime.fromisoformat(o)
+    return datetime.datetime.utcnow() + datetime.timedelta(hours=5, minutes=30)
+
 def due_folder():
-    today = (datetime.datetime.utcnow() + datetime.timedelta(hours=5, minutes=30)).date()
+    now = now_ist()
     for f in sorted((ROOT / "queue").iterdir()):
+        name = f.name
         try:
-            d = datetime.date.fromisoformat(f.name)
+            d = datetime.date.fromisoformat(name[:10])
         except ValueError:
             continue
-        if d <= today and (f / "post.json").exists() and not (f / "published.json").exists():
-            return f
+        slot = name[11:]
+        if slot not in SLOT_TIME:
+            continue
+        hh, mm = SLOT_TIME[slot]
+        due_at = datetime.datetime.combine(d, datetime.time(hh, mm))
+        if now < due_at or not (f / "post.json").exists() or (f / "published.json").exists():
+            continue
+        fj = f / "failed.json"
+        if fj.exists() and json.loads(fj.read_text()).get("attempts", 0) >= 2:
+            continue  # gave up on this one, keep the queue moving
+        return f
     return None
 
-def main():
-    f = due_folder()
-    if not f:
-        print("Nothing due."); return
+def publish(f):
     post = json.loads((f / "post.json").read_text())
     rel = f.relative_to(ROOT).as_posix()
     print(f"Due: {rel} ({post['type']})")
@@ -93,6 +108,19 @@ def main():
     out = {"media_id": m, **info}
     (f / "published.json").write_text(json.dumps(out, indent=1))
     print("Published:", info.get("permalink"))
+
+def main():
+    f = due_folder()
+    if not f:
+        print("Nothing due."); return
+    try:
+        publish(f)
+    except SystemExit as e:
+        fj = f / "failed.json"
+        n = (json.loads(fj.read_text()).get("attempts", 0) if fj.exists() else 0) + 1
+        fj.write_text(json.dumps({"attempts": n, "error": str(e.code)[:400]}, indent=1))
+        print(f"FAILED (attempt {n}): {e.code}")
+        raise
 
 if __name__ == "__main__":
     main()
