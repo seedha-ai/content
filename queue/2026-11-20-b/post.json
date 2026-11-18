@@ -1,11 +1,7 @@
 {
- "type": "carousel",
+ "type": "reel",
  "files": [
-  "slide1.jpg",
-  "slide2.jpg",
-  "slide3.jpg",
-  "slide4.jpg",
-  "slide5.jpg"
+  "reel.mp4"
  ],
  "caption": "5 prompts every student should save.\n\n1. Explain [topic] like I am 14. Use Indian examples.\n2. Summarise this chapter in 8 bullets, then list 5 terms I must remember.\n3. Quiz me on [topic]. One question at a time. Tell me what I got wrong.\n4. What are the 3 things students usually get wrong about [topic]?\n5. I have 10 days before my [subject] exam. Make a daily plan.\n\nSave this for exam season. Which one will you try first?\n\n#studytips #prompts #chatgpt #examprep #students #ai #seedhaai"
 }

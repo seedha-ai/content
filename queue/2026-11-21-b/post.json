@@ -1,11 +1,7 @@
 {
- "type": "carousel",
+ "type": "reel",
  "files": [
-  "slide1.jpg",
-  "slide2.jpg",
-  "slide3.jpg",
-  "slide4.jpg",
-  "slide5.jpg"
+  "reel.mp4"
  ],
  "caption": "Study from your own notes with NotebookLM.\n\nIt is a free Google tool. You add PDFs, notes or links, ask questions, and the answers point back to your sources.\n\nTry it on one chapter: ask for a summary, likely exam questions, and a simple explanation of the hardest part. It only knows what you upload, so check key facts against your textbook.\n\nHave you tried it? Tell us below.\n\n#notebooklm #studytips #googleai #students #ai #examprep #seedhaai"
 }

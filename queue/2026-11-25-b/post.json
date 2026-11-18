@@ -1,11 +1,7 @@
 {
- "type": "carousel",
+ "type": "reel",
  "files": [
-  "slide1.jpg",
-  "slide2.jpg",
-  "slide3.jpg",
-  "slide4.jpg",
-  "slide5.jpg"
+  "reel.mp4"
  ],
  "caption": "Learn AI basics in 30 days, free.\n\nWeek 1: use one chatbot daily for study doubts. Learn role, task, format.\nWeek 2: try NotebookLM on your notes. Fact-check an answer with a second tool.\nWeeks 3 and 4: automate one boring task, then build one small project and show it to a friend.\n\nSave this and start today.\n\n#learnai #ai #students #roadmap #freshers #chatgpt #seedhaai"
 }

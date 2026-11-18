@@ -1,11 +1,7 @@
 {
- "type": "carousel",
+ "type": "reel",
  "files": [
-  "slide1.jpg",
-  "slide2.jpg",
-  "slide3.jpg",
-  "slide4.jpg",
-  "slide5.jpg"
+  "reel.mp4"
  ],
  "caption": "What is an AI agent?\n\nA chatbot answers. An agent takes a goal, plans, uses tools and works through the steps.\n\nExample: find 5 internships and draft emails. The agent searches, shortlists, drafts. You review and send.\n\nAgents still make mistakes. Never share passwords or payment details, and review before anything is sent or bought.\n\nWould you trust an agent with a task? Tell us below.\n\n#aiagents #agenticai #ai #chatgpt #students #techindia #seedhaai"
 }

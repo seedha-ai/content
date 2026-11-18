@@ -1,0 +1,63 @@
+[
+ {
+  "id": "c_mistakes",
+  "kind": "carousel",
+  "cover": {
+   "tag": "Mistakes",
+   "title": "5 AI mistakes students make.",
+   "sub": "Number 3 can get you in trouble."
+  },
+  "slides": [
+   {
+    "kicker": "Mistakes 1 and 2",
+    "head": "Trusting it blindly.",
+    "items": [
+     [
+      "1. Copy paste",
+      "Submitting answers you did not read."
+     ],
+     [
+      "2. No checking",
+      "Facts and sources can be made up."
+     ]
+    ]
+   },
+   {
+    "kicker": "Mistakes 3 and 4",
+    "head": "Careless with data and effort.",
+    "items": [
+     [
+      "3. Private data",
+      "Pasting Aadhaar, passwords or marks sheets."
+     ],
+     [
+      "4. Lazy use",
+      "Asking for answers instead of explanations."
+     ]
+    ]
+   },
+   {
+    "kicker": "Mistake 5",
+    "head": "Using one tool for everything.",
+    "items": [
+     [
+      "Research",
+      "A tool with sources."
+     ],
+     [
+      "Notes",
+      "NotebookLM."
+     ],
+     [
+      "Writing",
+      "ChatGPT or Gemini."
+     ]
+    ]
+   }
+  ],
+  "cta": {
+   "title": "Send this to a friend who needs it."
+  },
+  "caption": "5 AI mistakes students make.\n\n1. Copy pasting answers you did not read.\n2. Not checking facts and sources.\n3. Pasting private data like Aadhaar, passwords or marks sheets.\n4. Asking for answers instead of explanations.\n5. Using one tool for everything.\n\nWhich one have you done? Be honest below.\n\n#ai #chatgpt #studytips #students #aitips #seedhaai"
+ }
+]

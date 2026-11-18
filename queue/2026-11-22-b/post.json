@@ -1,11 +1,7 @@
 {
- "type": "carousel",
+ "type": "reel",
  "files": [
-  "slide1.jpg",
-  "slide2.jpg",
-  "slide3.jpg",
-  "slide4.jpg",
-  "slide5.jpg"
+  "reel.mp4"
  ],
  "caption": "ChatGPT can sound sure and be wrong. Made-up sources, names and numbers are the common failure.\n\nCatch it in three steps: ask for source links, open the link and check it says that, then compare with a second tool.\n\nSafer prompt: If you are not sure, say so. Give a source for every number.\n\nNever submit or post an AI answer you have not verified.\n\nSave this and send it to the friend who copy-pastes.\n\n#chatgpt #aitips #factcheck #students #ai #promptengineering #seedhaai"
 }

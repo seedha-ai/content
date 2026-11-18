@@ -1,0 +1,7 @@
+{
+ "type": "reel",
+ "files": [
+  "reel.mp4"
+ ],
+ "caption": "Stop googling Excel formulas. Describe your sheet instead.\n\nTell AI what is in each column, the result you want, and ask it to explain the formula.\n\nColumn A has names, column B has marks. Give me an Excel formula to show Pass if marks are 40 or more, else Fail. Explain it simply.\n\nTest it on a few rows before trusting it. Send this to your Excel struggling friend.\n\n#excel #exceltips #chatgpt #students #productivity #seedhaai"
+}

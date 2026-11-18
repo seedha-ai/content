@@ -1,11 +1,7 @@
 {
- "type": "carousel",
+ "type": "reel",
  "files": [
-  "slide1.jpg",
-  "slide2.jpg",
-  "slide3.jpg",
-  "slide4.jpg",
-  "slide5.jpg"
+  "reel.mp4"
  ],
  "caption": "Will AI take your job? An IIT Madras paper from October 2026 says it is more complicated than yes or no.\n\nThe Centre for Responsible AI looked at how AI changes work in India. Most jobs are many tasks, and AI can only do some of them. The paper calls for affordable AI tools and clear reskilling paths.\n\nSo the useful question is: which tasks in my future job can AI speed up, and am I practising them?\n\nSource: Careers360, 26 Oct 2026.\n\n#aijobs #careers #iitmadras #students #freshers #ai #seedhaai"
 }
