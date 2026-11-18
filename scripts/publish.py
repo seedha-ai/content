@@ -3,12 +3,14 @@
 Folders: queue/YYYY-MM-DD[-a|-b]. Slot a posts at 12:30 IST, slot b at 19:00 IST
 (a folder with no suffix is slot a).
 
-A run that starts up to PREP_MIN minutes before a slot does all the slow work first
-(uploads, Instagram processing), then waits and publishes at the exact slot time.
+MODE=loop (default in the workflow): the run stays alive ~5.5 h, sleeps until 60 min before
+each slot, uploads and lets Instagram process the post, then publishes on the exact minute.
+At the end it starts the next run itself, so posting never depends on GitHub's cron timer.
+It also saves account and post metrics to metrics/YYYY-MM-DD.json at 20:30 IST daily.
 A run that starts late publishes straight away (catch-up).
 One post per run. Writes published.json on success; failed.json counts failures
 (a post is skipped after 2 failures so the queue keeps moving)."""
-import json, os, sys, time, datetime, pathlib, urllib.request, urllib.parse
+import json, os, sys, time, datetime, pathlib, subprocess, urllib.request, urllib.parse
 
 API = "https://graph.facebook.com/v21.0"
 TOKEN = os.environ["IG_TOKEN"]
@@ -19,7 +21,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 DRY = os.environ.get("DRY_RUN") == "1"
 
 SLOT_TIME = {"": (12, 30), "a": (12, 30), "b": (19, 0)}  # IST
-PREP_MIN = 75  # how early a run may start preparing a slot
+PREP_MIN = 60  # start preparing a slot this many minutes early
 IST = datetime.timedelta(hours=5, minutes=30)
 
 
@@ -131,12 +133,9 @@ def hold_until(at):
         time.sleep(left)
 
 
-def main():
-    f, at = due_folder()
-    if not f:
-        print("Nothing due."); return
+def publish_one(f, at):
     post = json.loads((f / "post.json").read_text())
-    print(f"Next: {f.name} ({post['type']}) at {at:%Y-%m-%d %H:%M} IST, now {now_ist():%H:%M:%S} IST")
+    print(f"Next: {f.name} ({post['type']}) at {at:%Y-%m-%d %H:%M} IST, now {now_ist():%H:%M:%S} IST", flush=True)
     if DRY:
         print("DRY_RUN: stop before uploading"); ig_user(); return
     try:
@@ -149,10 +148,135 @@ def main():
         fj = f / "failed.json"
         n = (json.loads(fj.read_text()).get("attempts", 0) if fj.exists() else 0) + 1
         fj.write_text(json.dumps({"attempts": n, "error": str(e.code)[:400]}, indent=1))
-        print(f"FAILED (attempt {n}): {e.code}")
-        raise
+        print(f"FAILED (attempt {n}): {e.code}", flush=True)
+        save(f"failed {f.name}")
+        time.sleep(120)
+        return
     (f / "published.json").write_text(json.dumps({"media_id": m, **info}, indent=1))
-    print("Published:", info.get("permalink"), "at", now_ist().strftime("%H:%M:%S"), "IST")
+    print("Published:", info.get("permalink"), "at", now_ist().strftime("%H:%M:%S"), "IST", flush=True)
+    save(f"published {f.name}")
+
+
+# ---------- metrics (saved daily so analysis does not depend on scraping) ----------
+MEDIA_METRICS = ["reach", "views", "saved", "shares", "likes", "comments", "total_interactions"]
+METRICS_AT = (20, 30)  # IST
+
+
+def media_insights(mid):
+    for ms in (MEDIA_METRICS, ["reach", "saved", "shares", "likes", "comments"], ["reach"]):
+        u = f"{API}/{mid}/insights?" + urllib.parse.urlencode({"metric": ",".join(ms), "access_token": TOKEN})
+        try:
+            with urllib.request.urlopen(u, timeout=60) as r:
+                d = json.loads(r.read())
+            return {x["name"]: x["values"][0]["value"] for x in d.get("data", [])}
+        except urllib.error.HTTPError as e:
+            err = e.read().decode()[:200]
+    return {"error": err}
+
+
+def collect_metrics():
+    ig = ig_user()
+    acct = call("GET", ig, {"fields": "username,followers_count,follows_count,media_count"})
+    media = call("GET", f"{ig}/media", {"fields": "id,media_type,media_product_type,permalink,timestamp,like_count,comments_count,caption", "limit": "100"}).get("data", [])
+    posts = []
+    for m in media:
+        row = {k: m.get(k) for k in ("id", "media_type", "media_product_type", "permalink", "timestamp", "like_count", "comments_count")}
+        row["hook"] = (m.get("caption") or "").split("\n")[0][:90]
+        row["insights"] = media_insights(m["id"])
+        posts.append(row)
+    snap = {"at_ist": now_ist().strftime("%Y-%m-%d %H:%M"), "account": acct, "posts": posts}
+    d = ROOT / "metrics"; d.mkdir(exist_ok=True)
+    (d / f"{now_ist():%Y-%m-%d}.json").write_text(json.dumps(snap, indent=1, ensure_ascii=False))
+    (d / "latest.json").write_text(json.dumps(snap, indent=1, ensure_ascii=False))
+    print(f"Metrics saved: {acct.get('followers_count')} followers, {len(posts)} posts", flush=True)
+    save("metrics " + now_ist().strftime("%Y-%m-%d"))
+
+
+def metrics_due():
+    n = now_ist()
+    return n.time() >= datetime.time(*METRICS_AT) and not (ROOT / "metrics" / f"{n:%Y-%m-%d}.json").exists()
+
+
+# ---------- git + loop ----------
+def git(*a):
+    return subprocess.run(["git", "-C", str(ROOT), *a], capture_output=True, text=True)
+
+
+def sync():
+    git("pull", "--rebase", "-q")
+
+
+def save(msg):
+    if not os.environ.get("GITHUB_ACTIONS"):
+        return
+    git("add", "queue", "metrics")
+    if git("diff", "--cached", "--quiet").returncode == 0:
+        return
+    git("commit", "-qm", msg)
+    for _ in range(3):
+        if git("pull", "--rebase", "-q").returncode == 0 and git("push", "-q").returncode == 0:
+            return
+        time.sleep(5)
+    print("WARN: could not push", msg, flush=True)
+
+
+def loop(budget_min):
+    """Stay alive up to budget_min minutes: sleep until each prep window, post on the minute."""
+    end = time.time() + budget_min * 60
+    last_post = 0
+    while time.time() < end - 60:
+        sync()
+        if metrics_due():
+            try:
+                collect_metrics()
+            except SystemExit as e:
+                print("metrics failed:", e.code, flush=True)
+                d = ROOT / "metrics"; d.mkdir(exist_ok=True)
+                (d / f"{now_ist():%Y-%m-%d}.json").write_text(json.dumps({"error": str(e.code)[:400]}))
+                save("metrics failed")
+            continue
+        f, at = due_folder()
+        if f:
+            gap = time.time() - last_post
+            if at < now_ist() and gap < 45 * 60:  # overdue backlog: keep 45 min between posts
+                time.sleep(min(45 * 60 - gap, max(5, end - 60 - time.time())))
+                continue
+            publish_one(f, at)
+            last_post = time.time()
+            continue
+        # sleep until the next prep window, metrics time, or end of budget (check every 15 min for new queue items)
+        nxt = next_event()
+        wait = min(15 * 60, end - 60 - time.time())
+        if nxt is not None:
+            wait = min(wait, max(5, (nxt - now_ist()).total_seconds()))
+        print(f"{now_ist():%H:%M} IST idle, next check in {int(wait)}s", flush=True)
+        time.sleep(max(5, wait))
+
+
+def next_event():
+    now = now_ist()
+    cands = []
+    for f in sorted((ROOT / "queue").iterdir()):
+        at = slot_time(f)
+        if at and (f / "post.json").exists() and not (f / "published.json").exists():
+            cands.append(at - datetime.timedelta(minutes=PREP_MIN))
+    m = datetime.datetime.combine(now.date(), datetime.time(*METRICS_AT))
+    if now >= m:
+        m += datetime.timedelta(days=1)
+    cands.append(m)
+    return min(cands)
+
+
+def main():
+    mode = os.environ.get("MODE", "once")
+    if mode == "metrics":
+        collect_metrics(); return
+    if mode == "loop" and not DRY:
+        loop(int(os.environ.get("BUDGET_MIN", "330"))); return
+    f, at = due_folder()
+    if not f:
+        print("Nothing due."); return
+    publish_one(f, at)
 
 
 if __name__ == "__main__":
