@@ -1,8 +1,9 @@
 name: publish
 on:
   schedule:
-    - cron: "0 7 * * *"     # 12:30 IST, slot a
-    - cron: "30 13 * * *"   # 19:00 IST, slot b
+    # GitHub delays or skips scheduled runs, so check every 30 min (12:07 PM to 10:37 PM IST).
+    # publish.py posts only when a slot is due (a: 12:00 IST, b: 18:30 IST), one post per run.
+    - cron: "7,37 6-17 * * *"
   workflow_dispatch:
     inputs:
       dry_run:
