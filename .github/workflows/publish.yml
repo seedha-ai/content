@@ -1,9 +1,14 @@
 name: publish
 on:
   schedule:
-    # GitHub delays or skips scheduled runs, so check every 30 min (12:07 PM to 10:37 PM IST).
-    # publish.py posts only when a slot is due (a: 12:00 IST, b: 18:30 IST), one post per run.
-    - cron: "7,37 6-17 * * *"
+    # Posts go out at exactly 12:30 PM and 7:00 PM IST. Runs start up to ~75 min early,
+    # upload and process the post, then hold and publish on the minute.
+    # GitHub often delays or drops scheduled runs, so each slot gets 5 early tries.
+    - cron: "47 5 * * *"            # 11:17 IST  prep slot a
+    - cron: "2,17,32,47 6 * * *"    # 11:32-12:17 IST  prep slot a
+    - cron: "17,32,47 12 * * *"     # 17:47-18:17 IST  prep slot b
+    - cron: "2,17 13 * * *"         # 18:32-18:47 IST  prep slot b
+    - cron: "7,37 7-17 * * *"       # catch-up every 30 min, 12:37 PM-11:07 PM IST
   workflow_dispatch:
     inputs:
       dry_run:
@@ -15,9 +20,10 @@ concurrency: publish
 jobs:
   publish:
     runs-on: ubuntu-latest
+    timeout-minutes: 150
     steps:
       - uses: actions/checkout@v4
-      - name: Publish next due post
+      - name: Publish next post (prepares early, posts on the minute)
         env:
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
           DRY_RUN: ${{ github.event.inputs.dry_run || '0' }}
@@ -28,4 +34,7 @@ jobs:
           git config user.name "seedha-bot"
           git config user.email "seedha-bot@users.noreply.github.com"
           git add queue
-          git diff --cached --quiet || (git commit -m "published $(date -u +%F)" && git push)
+          git diff --cached --quiet && exit 0
+          git commit -m "published $(date -u +%F)"
+          for i in 1 2 3; do git pull --rebase -q && git push -q && exit 0; sleep 5; done
+          exit 1
