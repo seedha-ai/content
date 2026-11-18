@@ -1,40 +1,43 @@
 name: publish
 on:
-  schedule:
-    # Posts go out at exactly 12:30 PM and 7:00 PM IST. Runs start up to ~75 min early,
-    # upload and process the post, then hold and publish on the minute.
-    # GitHub often delays or drops scheduled runs, so each slot gets 5 early tries.
-    - cron: "47 5 * * *"            # 11:17 IST  prep slot a
-    - cron: "2,17,32,47 6 * * *"    # 11:32-12:17 IST  prep slot a
-    - cron: "17,32,47 12 * * *"     # 17:47-18:17 IST  prep slot b
-    - cron: "2,17 13 * * *"         # 18:32-18:47 IST  prep slot b
-    - cron: "7,37 7-17 * * *"       # catch-up every 30 min, 12:37 PM-11:07 PM IST
   workflow_dispatch:
     inputs:
       dry_run:
         description: "1 = check only, do not post"
         default: "0"
+      mode:
+        description: "loop (stay alive and post on time) | once | metrics"
+        default: "loop"
+  schedule:
+    # Only a restart in case the self-running loop ever stops. Posting timing does not rely on this.
+    - cron: "11 */3 * * *"
 permissions:
   contents: write
-concurrency: publish
+  actions: write
+concurrency:
+  group: publish
+  cancel-in-progress: false
 jobs:
   publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 150
+    timeout-minutes: 350
     steps:
       - uses: actions/checkout@v4
-      - name: Publish next post (prepares early, posts on the minute)
+      - name: Publisher (prepares 60 min early, posts on the minute, saves metrics 8:30 PM IST)
         env:
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
           DRY_RUN: ${{ github.event.inputs.dry_run || '0' }}
-        run: python3 scripts/publish.py
-      - name: Record result
-        if: always()
+          MODE: ${{ github.event.inputs.mode || 'loop' }}
+          BUDGET_MIN: "330"
         run: |
           git config user.name "seedha-bot"
           git config user.email "seedha-bot@users.noreply.github.com"
-          git add queue
-          git diff --cached --quiet && exit 0
-          git commit -m "published $(date -u +%F)"
-          for i in 1 2 3; do git pull --rebase -q && git push -q && exit 0; sleep 5; done
-          exit 1
+          python3 scripts/publish.py
+      - name: Start the next run
+        if: always() && (github.event.inputs.mode || 'loop') == 'loop' && (github.event.inputs.dry_run || '0') != '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl -sf -X POST -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/publish.yml/dispatches" \
+            -d '{"ref":"main","inputs":{"dry_run":"0","mode":"loop"}}' && echo "next run started"
