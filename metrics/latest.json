@@ -1,13 +1,51 @@
 {
- "at_ist": "2026-11-20 20:30",
+ "at_ist": "2026-11-21 20:30",
  "account": {
   "id": "17841480311440495",
   "followers_count": 0,
   "follows_count": 0,
-  "media_count": 9,
+  "media_count": 11,
   "username": "seedha.ai"
  },
  "posts": [
+  {
+   "id": "17953946280289261",
+   "media_type": "VIDEO",
+   "media_product_type": "REELS",
+   "permalink": "https://www.instagram.com/reel/DgAO9swCPUu/",
+   "timestamp": "2026-11-21T13:30:03+0000",
+   "like_count": 0,
+   "comments_count": 0,
+   "hook": "Study from your own notes with NotebookLM.",
+   "insights": {
+    "reach": 14,
+    "views": 20,
+    "saved": 0,
+    "shares": 0,
+    "likes": 0,
+    "comments": 0,
+    "total_interactions": 0
+   }
+  },
+  {
+   "id": "18164775574452695",
+   "media_type": "VIDEO",
+   "media_product_type": "REELS",
+   "permalink": "https://www.instagram.com/reel/Df_iVKWj9T8/",
+   "timestamp": "2026-11-21T07:00:02+0000",
+   "like_count": 0,
+   "comments_count": 0,
+   "hook": "Your resume is not getting shortlisted because the ask is vague.",
+   "insights": {
+    "reach": 47,
+    "views": 51,
+    "saved": 0,
+    "shares": 0,
+    "likes": 0,
+    "comments": 0,
+    "total_interactions": 0
+   }
+  },
   {
    "id": "18457992613192549",
    "media_type": "VIDEO",
@@ -18,13 +56,13 @@
    "comments_count": 0,
    "hook": "5 prompts every student should save.",
    "insights": {
-    "reach": 13,
-    "views": 16,
-    "saved": 0,
+    "reach": 84,
+    "views": 110,
+    "saved": 1,
     "shares": 0,
     "likes": 0,
     "comments": 0,
-    "total_interactions": 0
+    "total_interactions": 1
    }
   },
   {
@@ -33,17 +71,17 @@
    "media_product_type": "REELS",
    "permalink": "https://www.instagram.com/reel/Df89iSSCp7u/",
    "timestamp": "2026-11-20T07:00:02+0000",
-   "like_count": 0,
+   "like_count": 1,
    "comments_count": 0,
    "hook": "28% of AI-led fresher job postings on foundit in July 2026 were AI/ML Engineer roles. In t",
    "insights": {
-    "reach": 9,
-    "views": 9,
+    "reach": 45,
+    "views": 55,
     "saved": 0,
     "shares": 0,
-    "likes": 0,
+    "likes": 1,
     "comments": 0,
-    "total_interactions": 0
+    "total_interactions": 1
    }
   },
   {
