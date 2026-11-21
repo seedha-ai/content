@@ -7,16 +7,20 @@ Brand: Ink Indigo #16164A, Haldi #F5B800, Chalk #F4F6FA. Fonts: Instrument Serif
 1. **Measure.** `metrics/YYYY-MM-DD.json` is written every day at 8:30 PM IST by the publisher (followers, and reach, views, saves, shares, likes and comments per post from Instagram Insights).
 2. **Understand.** Compare posts by format, hook and topic. Look at reach first, then sends (shares) per reach, saves per reach and follows.
 3. **Research.** Competitor AI-education pages and this week's AI news that matters to Indian students. Prefer official sources and cite them in captions.
-4. **Create.** Make the next 7 days (14 reels), double down on what worked, and test one new idea per week.
+4. **Create.** Make the next 7 days (21 reels): a = strongest format, b = second format, c = the week's experiment. Double down on winners, drop losers.
 5. **Queue** at least 10 days ahead, so one missed week never stops posting.
 
 ## Schedule
-Two posts a day: 12:30 PM IST (slot a) and 7:00 PM IST (slot b). Folders: `queue/YYYY-MM-DD-a|b/` with `post.json` (`{"type":"reel","files":["reel.mp4"],"caption":"..."}`) and the media file.
+Three reels a day from 3 Dec 2026: 12:30 PM IST (slot a), 7:00 PM IST (slot b), 9:30 PM IST (slot c, Indian prime time). Folders: `queue/YYYY-MM-DD-a|b|c/` with `post.json` (`{"type":"reel","files":["reel.mp4"],"caption":"..."}`) and the media file.
 The publisher keeps itself running (each run starts the next). It prepares 60 minutes early and publishes on the minute.
 
 ## What the data says so far
 - 18 Nov 2026, 0 followers: the reel reached 57 people, and 4 feed posts (carousels and statics) reached 0 to 1. **With no followers, only reels reach anyone. Post reels only until the page has an audience** (revisit at about 1,000 followers).
 - Instagram ranks reels on watch time, then sends per reach, then likes per reach. Sends matter most for reaching non-followers. So every reel needs a hook in the first second, a payoff before 12 seconds, and a reason to send it to a friend.
+
+## Competitors
+Similar pages to track weekly (fill in and keep updated: handle, followers, what their top reels do):
+- (to be filled by the weekly run)
 
 ## Formats (tools/)
 - **Prompt-fix reel** (`audio_gen.py` + `reel_gen.py`, spec like `tools/specs/example_prompt_reel.json`): hook, bad prompt, fix (3 items), better prompt, result, CTA. 15 s with original scored audio. Keep h1 under 30 characters (or 3 lines), p2 and o2 under about 100 characters each, so the payoff lands by about 12 s.
@@ -42,4 +46,5 @@ Never like, follow or comment from the user's personal profile. Never post anyth
 | Week | Change | Result |
 |---|---|---|
 | 16 to 18 Nov | Mixed reel, carousel and static | Feed posts reached 0. Reel reached 57. |
-| 19 Nov to 2 Dec | All reels: prompt-fix at noon, slide reels at 7 PM | (fill from metrics) |
+| 19 to 20 Nov | All reels: prompt-fix at noon, slide reels at 7 PM | Prompt-fix reels reached 26 to 57; slide reels 9 to 13; static reels 9. 0 shares, 0 follows. Prompt-fix wins. |
+| 3 Dec onward | 3 reels a day; more prompt-fix; slot c experiments | (fill from metrics) |
