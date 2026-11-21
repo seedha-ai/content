@@ -1,6 +1,6 @@
 """Publish @seedha.ai posts from queue/ via the official Instagram Graph API, on the minute.
 
-Folders: queue/YYYY-MM-DD[-a|-b]. Slot a posts at 12:30 IST, slot b at 19:00 IST
+Folders: queue/YYYY-MM-DD[-a|-b|-c]. Slot a posts at 12:30 IST, slot b at 19:00 IST, slot c at 21:30 IST
 (a folder with no suffix is slot a).
 
 MODE=loop (default in the workflow): the run stays alive ~5.5 h, sleeps until 60 min before
@@ -20,7 +20,7 @@ RAW = f"https://raw.githubusercontent.com/{REPO}/{BRANCH}"
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DRY = os.environ.get("DRY_RUN") == "1"
 
-SLOT_TIME = {"": (12, 30), "a": (12, 30), "b": (19, 0)}  # IST
+SLOT_TIME = {"": (12, 30), "a": (12, 30), "b": (19, 0), "c": (21, 30)}  # IST
 PREP_MIN = 60  # start preparing a slot this many minutes early
 IST = datetime.timedelta(hours=5, minutes=30)
 
