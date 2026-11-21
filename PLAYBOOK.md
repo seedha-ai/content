@@ -3,6 +3,19 @@
 @seedha.ai: AI, made simple, for Indian students and early-career people. English-led. No hype.
 Brand: Ink Indigo #16164A, Haldi #F5B800, Chalk #F4F6FA. Fonts: Instrument Serif and Instrument Sans (tools/fonts).
 
+## Aim and scoreboard
+Aim: grow @seedha.ai to its full potential as India's simplest AI-for-students page. Learn, understand, improvise, repeat, twice a week.
+- **North star:** followers.
+- **Leading signals per reel:** reach, shares per 1,000 reach, saves per 1,000 reach, follows gained. Reach shows the hook and format work; shares and saves show the value; follows show the page promise works.
+- **Weekly target:** beat last week's median reach per reel and shares per 1,000 reach. If two weeks in a row miss, change the format, not just the topic.
+- **Milestones:** first 100 followers, then 1,000 (trial reels and carousels come back here), then 10,000.
+- Every decision cites a number from metrics/. Gut feel is not a reason.
+
+## Cadence
+- Daily 8:41 PM IST: report (posts on time, numbers, one fix).
+- Sunday 11:13 AM IST: full analysis (ours, competitors, news), then a 21-reel batch, queue kept 10+ days ahead.
+- Wednesday 11:13 AM IST: mid-week tune-up. Re-read the latest numbers and replace queued-but-unposted reels for the next 4 days if the data clearly says a format or topic loses.
+
 ## The loop
 1. **Measure.** `metrics/YYYY-MM-DD.json` is written every day at 8:30 PM IST by the publisher (followers, and reach, views, saves, shares, likes and comments per post from Instagram Insights).
 2. **Understand.** Compare posts by format, hook and topic. Look at reach first, then sends (shares) per reach, saves per reach and follows.
