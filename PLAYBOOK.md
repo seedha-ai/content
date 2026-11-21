@@ -13,8 +13,8 @@ Aim: grow @seedha.ai to its full potential as India's simplest AI-for-students p
 
 ## Cadence
 - Daily 8:41 PM IST: report (posts on time, numbers, one fix).
-- Sunday 11:13 AM IST: full analysis (ours, competitors, news), then a 21-reel batch, queue kept 10+ days ahead.
-- Wednesday 11:13 AM IST: mid-week tune-up. Re-read the latest numbers and replace queued-but-unposted reels for the next 4 days if the data clearly says a format or topic loses.
+- Sunday 4:47 PM IST: full analysis (ours, competitors, news), then a 21-reel batch, queue kept 10+ days ahead.
+- Wednesday 4:47 PM IST: mid-week tune-up. Re-read the latest numbers and replace queued-but-unposted reels for the next 4 days if the data clearly says a format or topic loses.
 
 ## The loop
 1. **Measure.** `metrics/YYYY-MM-DD.json` is written every day at 8:30 PM IST by the publisher (followers, and reach, views, saves, shares, likes and comments per post from Instagram Insights).
