@@ -33,7 +33,9 @@ The publisher keeps itself running (each run starts the next). It prepares 60 mi
 
 ## Competitors
 Similar pages to track weekly (fill in and keep updated: handle, followers, what their top reels do):
-- (to be filled by the weekly run)
+- @techsanku (375K): face-to-camera gadget and AI app demos under 60 s, many sponsored. 25K to 53.5M views. Lesson: demo the tool working.
+- @toolslab.ai (53.6K, faceless like us): viral = AI vs original visual comparisons (1.2M to 2.9M). Daily = "Don't pay until you see this" free vs paid lists, tool lists, same prompt in two tools. Typical 0.5K to 5K views.
+- @arvind.techies (374K), @techyrohit.ai (129K), @youcantoo.ai: Indian AI tech creators to review next week (Scrumball AI ranking, Nov 2026).
 
 ## Formats (tools/)
 - **Prompt-fix reel** (`audio_gen.py` + `reel_gen.py`, spec like `tools/specs/example_prompt_reel.json`): hook, bad prompt, fix (3 items), better prompt, result, CTA. 15 s with original scored audio. Keep h1 under 30 characters (or 3 lines), p2 and o2 under about 100 characters each, so the payoff lands by about 12 s.
@@ -60,4 +62,5 @@ Never like, follow or comment from the user's personal profile. Never post anyth
 |---|---|---|
 | 16 to 18 Nov | Mixed reel, carousel and static | Feed posts reached 0. Reel reached 57. |
 | 19 to 20 Nov | All reels: prompt-fix at noon, slide reels at 7 PM | Prompt-fix reels reached 26 to 57; slide reels 9 to 13; static reels 9. 0 shares, 0 follows. Prompt-fix wins. |
-| 3 Dec onward | 3 reels a day; more prompt-fix; slot c experiments | (fill from metrics) |
+| 16 to 21 Nov (full week) | Reels only from 19 Nov | Best: "5 prompts to save" slide list 84 reach, 1 save; prompt-fix 47 to 57; jobs stat 45. Worst: research news 9, tool explainer 14. 0 followers, 0 shares. Topic beats format: copyable lists, career pain, hard numbers win. |
+| 3 to 9 Dec | a = prompt-fix on career and study pain; b = "N prompts to save" lists plus 2 news (Google AI Plus deadline, AI in schools); c = new "One trick" 12 s reels (shorter test) | (fill from metrics) |

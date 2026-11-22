@@ -1,0 +1,7 @@
+{
+ "type": "reel",
+ "files": [
+  "reel.mp4"
+ ],
+ "caption": "Stop pasting just the error message into ChatGPT.\n\nGive it three things: the few lines of code around the error, the full error message, and what you expected to happen.\n\nHere is my code and the full error. I expected [result]. Explain the bug simply, then the fix.\n\nRead the explanation before copying the fix. Send this to your coding buddy.\n\n#coding #python #debugging #chatgpt #students #seedhaai"
+}

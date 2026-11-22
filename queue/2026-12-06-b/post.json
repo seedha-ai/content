@@ -1,0 +1,7 @@
+{
+ "type": "reel",
+ "files": [
+  "reel.mp4"
+ ],
+ "caption": "5 prompts for coding interviews.\n\n1. Explain the sliding window pattern with one example.\n2. Which pattern fits this problem, and why?\n3. Be my interviewer. Give me an easy array problem. Do not show the answer.\n4. Review my code for time complexity and edge cases.\n5. How should I explain this solution out loud in 60 seconds?\n\nSolve first, ask AI after. Send this to your coding buddy.\n\n#codinginterview #dsa #placements #chatgpt #students #seedhaai"
+}
