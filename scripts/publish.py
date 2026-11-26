@@ -154,24 +154,39 @@ def publish_one(f, at):
         return
     (f / "published.json").write_text(json.dumps({"media_id": m, **info}, indent=1))
     print("Published:", info.get("permalink"), "at", now_ist().strftime("%H:%M:%S"), "IST", flush=True)
+    write_status()
     save(f"published {f.name}")
 
 
 # ---------- metrics (saved daily so analysis does not depend on scraping) ----------
 MEDIA_METRICS = ["reach", "views", "saved", "shares", "likes", "comments", "total_interactions"]
+REEL_METRICS = MEDIA_METRICS + ["ig_reels_avg_watch_time", "reels_skip_rate", "ig_reels_video_view_total_time"]
 METRICS_AT = (20, 30)  # IST
 
 
-def media_insights(mid):
+def media_insights(mid, reel=False):
+    out = {}
+    if reel:  # retention metrics, asked one by one so one unsupported metric cannot hide the rest
+        for x in ("ig_reels_avg_watch_time", "reels_skip_rate", "ig_reels_video_view_total_time"):
+            u = f"{API}/{mid}/insights?" + urllib.parse.urlencode({"metric": x, "access_token": TOKEN})
+            try:
+                with urllib.request.urlopen(u, timeout=60) as r:
+                    d = json.loads(r.read())
+                for y in d.get("data", []):
+                    out[y["name"]] = y["values"][0]["value"]
+            except urllib.error.HTTPError as e:
+                out[x + "_error"] = e.read().decode()[:120]
     for ms in (MEDIA_METRICS, ["reach", "saved", "shares", "likes", "comments"], ["reach"]):
         u = f"{API}/{mid}/insights?" + urllib.parse.urlencode({"metric": ",".join(ms), "access_token": TOKEN})
         try:
             with urllib.request.urlopen(u, timeout=60) as r:
                 d = json.loads(r.read())
-            return {x["name"]: x["values"][0]["value"] for x in d.get("data", [])}
+            out.update({x["name"]: x["values"][0]["value"] for x in d.get("data", [])})
+            return out
         except urllib.error.HTTPError as e:
             err = e.read().decode()[:200]
-    return {"error": err}
+    out["error"] = err
+    return out
 
 
 def collect_metrics():
@@ -182,12 +197,13 @@ def collect_metrics():
     for m in media:
         row = {k: m.get(k) for k in ("id", "media_type", "media_product_type", "permalink", "timestamp", "like_count", "comments_count")}
         row["hook"] = (m.get("caption") or "").split("\n")[0][:90]
-        row["insights"] = media_insights(m["id"])
+        row["insights"] = media_insights(m["id"], reel=m.get("media_product_type") == "REELS")
         posts.append(row)
     snap = {"at_ist": now_ist().strftime("%Y-%m-%d %H:%M"), "account": acct, "posts": posts}
     d = ROOT / "metrics"; d.mkdir(exist_ok=True)
     (d / f"{now_ist():%Y-%m-%d}.json").write_text(json.dumps(snap, indent=1, ensure_ascii=False))
     (d / "latest.json").write_text(json.dumps(snap, indent=1, ensure_ascii=False))
+    write_status()
     print(f"Metrics saved: {acct.get('followers_count')} followers, {len(posts)} posts", flush=True)
     save("metrics " + now_ist().strftime("%Y-%m-%d"))
 
@@ -195,6 +211,29 @@ def collect_metrics():
 def metrics_due():
     n = now_ist()
     return n.time() >= datetime.time(*METRICS_AT) and not (ROOT / "metrics" / f"{n:%Y-%m-%d}.json").exists()
+
+
+def write_status():
+    """metrics/status.json: queue health, readable from raw.githubusercontent.com without the GitHub API."""
+    q = []
+    for f in sorted((ROOT / "queue").iterdir()):
+        at = slot_time(f)
+        if at is None or not (f / "post.json").exists():
+            continue
+        st = "published" if (f / "published.json").exists() else ("failed" if (f / "failed.json").exists() else "queued")
+        row = {"folder": f.name, "due_ist": at.strftime("%Y-%m-%d %H:%M"), "status": st}
+        if st == "published":
+            row.update(json.loads((f / "published.json").read_text()))
+        if st == "failed":
+            row["error"] = json.loads((f / "failed.json").read_text()).get("error", "")[:200]
+        q.append(row)
+    queued = [r for r in q if r["status"] == "queued"]
+    days = sorted({r["due_ist"][:10] for r in queued})
+    snap = {"updated_ist": now_ist().strftime("%Y-%m-%d %H:%M"), "queued_count": len(queued), "queued_days": len(days),
+            "last_queued_day": days[-1] if days else None, "next": queued[0] if queued else None,
+            "failed": [r for r in q if r["status"] == "failed"], "recent_published": [r for r in q if r["status"] == "published"][-6:]}
+    d = ROOT / "metrics"; d.mkdir(exist_ok=True)
+    (d / "status.json").write_text(json.dumps(snap, indent=1))
 
 
 # ---------- git + loop ----------
