@@ -1,0 +1,462 @@
+{
+ "at_ist": "2026-11-27 01:36",
+ "account": {
+  "id": "17841480311440495",
+  "followers_count": 0,
+  "follows_count": 4,
+  "media_count": 21,
+  "username": "seedha.ai"
+ },
+ "posts": [
+  {
+   "id": "18197575390398757",
+   "media_type": "VIDEO",
+   "media_product_type": "REELS",
+   "permalink": "https://www.instagram.com/reel/DgNG7-FT19V/",
+   "timestamp": "2026-11-26T13:30:02+0000",
+   "like_count": 0,
+   "comments_count": 0,
+   "hook": "A free AI course with a Government of India certificate.",
+   "insights": {
+    "ig_reels_avg_watch_time": 2215,
+    "reels_skip_rate": 85.7,
+    "ig_reels_video_view_total_time": 59826,
+    "reach": 23,
+    "views": 32,
+    "saved": 0,
+    "shares": 0,
+    "likes": 0,
+    "comments": 0,
+    "total_interactions": 0
+   }
+  },
+  {
+   "id": "18122917051758849",
+   "media_type": "VIDEO",
+   "media_product_type": "REELS",
+   "permalink": "https://www.instagram.com/reel/DgMaTenSkkU/",
+   "timestamp": "2026-11-26T07:00:03+0000",
+   "like_count": 0,
+   "comments_count": 0,
+   "hook": "Your English is fine. You just need practice.",
+   "insights": {
+    "ig_reels_avg_watch_time": 1250,
+    "reels_skip_rate": 100,
+    "ig_reels_video_view_total_time": 6251,
+    "reach": 5,
+    "views": 5,
+    "saved": 0,
+    "shares": 0,
+    "likes": 0,
+    "comments": 0,
+    "total_interactions": 0
+   }
+  },
+  {
+   "id": "17928145167447397",
+   "media_type": "VIDEO",
+   "media_product_type": "REELS",
+   "permalink": "https://www.instagram.com/reel/DgKiJEgpKRh/",
+   "timestamp": "2026-11-25T13:30:03+0000",
+   "like_count": 0,
+   "comments_count": 0,
+   "hook": "Learn AI basics in 30 days, free.",
+   "insights": {
+    "ig_reels_avg_watch_time": 1578,
+    "reels_skip_rate": 91.9,
+    "ig_reels_video_view_total_time": 97894,
+    "reach": 50,
+    "views": 71,
+    "saved": 1,
+    "shares": 0,
+    "likes": 0,
+    "comments": 0,
+    "total_interactions": 1
+   }
+  },
+  {
+   "id": "18126871345986196",
+   "media_type": "VIDEO",
+   "media_product_type": "REELS",
+   "permalink": "https://www.instagram.com/reel/DgJ1gkpgONA/",
+   "timestamp": "2026-11-25T07:00:01+0000",
+   "like_count": 0,
+   "comments_count": 0,
+   "hook": "Prompt of the day.",
+   "insights": {
+    "ig_reels_avg_watch_time": 1733,
+    "reels_skip_rate": 88.1,
+    "ig_reels_video_view_total_time": 72819,
+    "reach": 42,
+    "views": 46,
+    "saved": 0,
+    "shares": 0,
+    "likes": 0,
+    "comments": 0,
+    "total_interactions": 0
+   }
+  },
+  {
+   "id": "18150099913584848",
+   "media_type": "VIDEO",
+   "media_product_type": "REELS",
+   "permalink": "https://www.instagram.com/reel/DgH9WcwAnZu/",
+   "timestamp": "2026-11-24T13:30:02+0000",
+   "like_count": 0,
+   "comments_count": 0,
+   "hook": "What is an AI agent?",
+   "insights": {
+    "ig_reels_avg_watch_time": 814,
+    "reels_skip_rate": 100,
+    "ig_reels_video_view_total_time": 7326,
+    "reach": 8,
+    "views": 9,
+    "saved": 0,
+    "shares": 0,
+    "likes": 0,
+    "comments": 0,
+    "total_interactions": 0
+   }
+  },
+  {
+   "id": "18097543439682324",
+   "media_type": "VIDEO",
+   "media_product_type": "REELS",
+   "permalink": "https://www.instagram.com/reel/DgHUj9-Ei34/",
+   "timestamp": "2026-11-24T07:00:02+0000",
+   "like_count": 0,
+   "comments_count": 0,
+   "hook": "ChatGPT can make up sources. Catch it in 10 seconds.",
+   "insights": {
+    "ig_reels_avg_watch_time": 2344,
+    "reels_skip_rate": 83.9,
+    "ig_reels_video_view_total_time": 72678,
+    "reach": 27,
+    "views": 36,
+    "saved": 0,
+    "shares": 0,
+    "likes": 0,
+    "comments": 0,
+    "total_interactions": 0
+   }
+  },
+  {
+   "id": "18120613751002958",
+   "media_type": "VIDEO",
+   "media_product_type": "REELS",
+   "permalink": "https://www.instagram.com/reel/DgFYjQzDXII/",
+   "timestamp": "2026-11-23T13:30:02+0000",
+   "like_count": 0,
+   "comments_count": 0,
+   "hook": "Stop using one AI tool for everything.",
+   "insights": {
+    "ig_reels_avg_watch_time": 1036,
+    "reels_skip_rate": 92.9,
+    "ig_reels_video_view_total_time": 14512,
+    "reach": 11,
+    "views": 14,
+    "saved": 0,
+    "shares": 0,
+    "likes": 0,
+    "comments": 0,
+    "total_interactions": 0
+   }
+  },
+  {
+   "id": "18100003904133716",
+   "media_type": "VIDEO",
+   "media_product_type": "REELS",
+   "permalink": "https://www.instagram.com/reel/DgEr7BJDpAK/",
+   "timestamp": "2026-11-23T07:00:03+0000",
+   "like_count": 0,
+   "comments_count": 0,
+   "hook": "Prompt of the day.",
+   "insights": {
+    "ig_reels_avg_watch_time": 1843,
+    "reels_skip_rate": 85.9,
+    "ig_reels_video_view_total_time": 182535,
+    "reach": 95,
+    "views": 113,
+    "saved": 0,
+    "shares": 0,
+    "likes": 0,
+    "comments": 0,
+    "total_interactions": 0
+   }
+  },
+  {
+   "id": "18197380567398868",
+   "media_type": "VIDEO",
+   "media_product_type": "REELS",
+   "permalink": "https://www.instagram.com/reel/DgC4iIwDwkS/",
+   "timestamp": "2026-11-22T13:30:02+0000",
+   "like_count": 2,
+   "comments_count": 0,
+   "hook": "ChatGPT can sound sure and be wrong. Made-up sources, names and numbers are the common fai",
+   "insights": {
+    "ig_reels_avg_watch_time": 2063,
+    "reels_skip_rate": 88.5,
+    "ig_reels_video_view_total_time": 200126,
+    "reach": 64,
+    "views": 106,
+    "saved": 0,
+    "shares": 0,
+    "likes": 2,
+    "comments": 0,
+    "total_interactions": 2
+   }
+  },
+  {
+   "id": "18578925976076370",
+   "media_type": "VIDEO",
+   "media_product_type": "REELS",
+   "permalink": "https://www.instagram.com/reel/DgCHIGIiHO8/",
+   "timestamp": "2026-11-22T07:00:03+0000",
+   "like_count": 0,
+   "comments_count": 0,
+   "hook": "Fresher AI/ML hiring is up 19% according to Naukri's September 2026 data. Hiring for peopl",
+   "insights": {
+    "ig_reels_avg_watch_time": 862,
+    "reels_skip_rate": 95.4,
+    "ig_reels_video_view_total_time": 112183,
+    "reach": 124,
+    "views": 138,
+    "saved": 0,
+    "shares": 0,
+    "likes": 0,
+    "comments": 0,
+    "total_interactions": 0
+   }
+  },
+  {
+   "id": "17953946280289261",
+   "media_type": "VIDEO",
+   "media_product_type": "REELS",
+   "permalink": "https://www.instagram.com/reel/DgAO9swCPUu/",
+   "timestamp": "2026-11-21T13:30:03+0000",
+   "like_count": 0,
+   "comments_count": 0,
+   "hook": "Study from your own notes with NotebookLM.",
+   "insights": {
+    "ig_reels_avg_watch_time": 1566,
+    "reels_skip_rate": 91.9,
+    "ig_reels_video_view_total_time": 134727,
+    "reach": 52,
+    "views": 89,
+    "saved": 0,
+    "shares": 0,
+    "likes": 0,
+    "comments": 0,
+    "total_interactions": 0
+   }
+  },
+  {
+   "id": "18164775574452695",
+   "media_type": "VIDEO",
+   "media_product_type": "REELS",
+   "permalink": "https://www.instagram.com/reel/Df_iVKWj9T8/",
+   "timestamp": "2026-11-21T07:00:02+0000",
+   "like_count": 0,
+   "comments_count": 0,
+   "hook": "Your resume is not getting shortlisted because the ask is vague.",
+   "insights": {
+    "ig_reels_avg_watch_time": 933,
+    "reels_skip_rate": 98.1,
+    "ig_reels_video_view_total_time": 49486,
+    "reach": 53,
+    "views": 58,
+    "saved": 0,
+    "shares": 0,
+    "likes": 0,
+    "comments": 0,
+    "total_interactions": 0
+   }
+  },
+  {
+   "id": "18457992613192549",
+   "media_type": "VIDEO",
+   "media_product_type": "REELS",
+   "permalink": "https://www.instagram.com/reel/Df9qKlnDGQy/",
+   "timestamp": "2026-11-20T13:30:02+0000",
+   "like_count": 0,
+   "comments_count": 0,
+   "hook": "5 prompts every student should save.",
+   "insights": {
+    "ig_reels_avg_watch_time": 1504,
+    "reels_skip_rate": 92,
+    "ig_reels_video_view_total_time": 150426,
+    "reach": 84,
+    "views": 110,
+    "saved": 1,
+    "shares": 0,
+    "likes": 0,
+    "comments": 0,
+    "total_interactions": 1
+   }
+  },
+  {
+   "id": "18435890716144114",
+   "media_type": "VIDEO",
+   "media_product_type": "REELS",
+   "permalink": "https://www.instagram.com/reel/Df89iSSCp7u/",
+   "timestamp": "2026-11-20T07:00:02+0000",
+   "like_count": 1,
+   "comments_count": 0,
+   "hook": "28% of AI-led fresher job postings on foundit in July 2026 were AI/ML Engineer roles. In t",
+   "insights": {
+    "ig_reels_avg_watch_time": 1470,
+    "reels_skip_rate": 86,
+    "ig_reels_video_view_total_time": 73541,
+    "reach": 45,
+    "views": 55,
+    "saved": 0,
+    "shares": 0,
+    "likes": 1,
+    "comments": 0,
+    "total_interactions": 1
+   }
+  },
+  {
+   "id": "18131938834922132",
+   "media_type": "VIDEO",
+   "media_product_type": "REELS",
+   "permalink": "https://www.instagram.com/reel/Df7FXv8F9ib/",
+   "timestamp": "2026-11-19T13:30:03+0000",
+   "like_count": 0,
+   "comments_count": 0,
+   "hook": "Will AI take your job? An IIT Madras paper from October 2026 says it is more complicated t",
+   "insights": {
+    "ig_reels_avg_watch_time": 4741,
+    "reels_skip_rate": 90,
+    "ig_reels_video_view_total_time": 47412,
+    "reach": 9,
+    "views": 12,
+    "saved": 0,
+    "shares": 0,
+    "likes": 0,
+    "comments": 0,
+    "total_interactions": 0
+   }
+  },
+  {
+   "id": "18119123564124079",
+   "media_type": "VIDEO",
+   "media_product_type": "REELS",
+   "permalink": "https://www.instagram.com/reel/Df6YvS1jIYO/",
+   "timestamp": "2026-11-19T07:00:02+0000",
+   "like_count": 0,
+   "comments_count": 0,
+   "hook": "Quiz yourself with AI instead of just reading.",
+   "insights": {
+    "ig_reels_avg_watch_time": 2545,
+    "reels_skip_rate": 80,
+    "ig_reels_video_view_total_time": 63646,
+    "reach": 26,
+    "views": 27,
+    "saved": 0,
+    "shares": 0,
+    "likes": 0,
+    "comments": 0,
+    "total_interactions": 0
+   }
+  },
+  {
+   "id": "18113087453103911",
+   "media_type": "CAROUSEL_ALBUM",
+   "media_product_type": "FEED",
+   "permalink": "https://www.instagram.com/p/Df4ryUyjZMP/",
+   "timestamp": "2026-11-18T14:08:13+0000",
+   "like_count": 0,
+   "comments_count": 0,
+   "hook": "Before you pay for any AI tool, check what you can get free.",
+   "insights": {
+    "reach": 1,
+    "views": 2,
+    "saved": 0,
+    "shares": 0,
+    "likes": 0,
+    "comments": 0,
+    "total_interactions": 0
+   }
+  },
+  {
+   "id": "18103107152187626",
+   "media_type": "IMAGE",
+   "media_product_type": "FEED",
+   "permalink": "https://www.instagram.com/p/Df3-AP_jC6y/",
+   "timestamp": "2026-11-18T07:28:00+0000",
+   "like_count": 0,
+   "comments_count": 0,
+   "hook": "100 million people in India now use ChatGPT every week. India is OpenAI's second-largest m",
+   "insights": {
+    "reach": 0,
+    "views": 0,
+    "saved": 0,
+    "shares": 0,
+    "likes": 0,
+    "comments": 0,
+    "total_interactions": 0
+   }
+  },
+  {
+   "id": "18135767362689395",
+   "media_type": "CAROUSEL_ALBUM",
+   "media_product_type": "FEED",
+   "permalink": "https://www.instagram.com/p/Df2R99UoLUS/",
+   "timestamp": "2026-11-17T15:44:09+0000",
+   "like_count": 0,
+   "comments_count": 0,
+   "hook": "Claimed free ChatGPT Go last November? Your free year is ending or already over, so check ",
+   "insights": {
+    "reach": 0,
+    "views": 0,
+    "saved": 0,
+    "shares": 0,
+    "likes": 0,
+    "comments": 0,
+    "total_interactions": 0
+   }
+  },
+  {
+   "id": "18005552610008048",
+   "media_type": "VIDEO",
+   "media_product_type": "REELS",
+   "permalink": "https://www.instagram.com/reel/Df1Yo-hjgAK/",
+   "timestamp": "2026-11-17T07:23:22+0000",
+   "like_count": 0,
+   "comments_count": 0,
+   "hook": "Your ChatGPT answers are bad because of one mistake: a lazy prompt.",
+   "insights": {
+    "ig_reels_avg_watch_time": 2858,
+    "reels_skip_rate": 91.4,
+    "ig_reels_video_view_total_time": 180102,
+    "reach": 57,
+    "views": 63,
+    "saved": 0,
+    "shares": 0,
+    "likes": 0,
+    "comments": 0,
+    "total_interactions": 0
+   }
+  },
+  {
+   "id": "17988151910895600",
+   "media_type": "CAROUSEL_ALBUM",
+   "media_product_type": "FEED",
+   "permalink": "https://www.instagram.com/p/DfzCCI7GJyO/",
+   "timestamp": "2026-11-16T09:27:12+0000",
+   "like_count": 0,
+   "comments_count": 0,
+   "hook": "ChatGPT feels like magic. It is really a very good guessing game.",
+   "insights": {
+    "reach": 0,
+    "views": 0,
+    "saved": 0,
+    "shares": 0,
+    "likes": 0,
+    "comments": 0,
+    "total_interactions": 0
+   }
+  }
+ ]
+}

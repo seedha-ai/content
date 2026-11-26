@@ -1,0 +1,68 @@
+{
+ "updated_ist": "2026-11-27 01:36",
+ "queued_count": 33,
+ "queued_days": 13,
+ "last_queued_day": "2026-12-09",
+ "next": {
+  "folder": "2026-11-27-a",
+  "due_ist": "2026-11-27 12:30",
+  "status": "queued"
+ },
+ "failed": [],
+ "recent_published": [
+  {
+   "folder": "2026-11-24-a",
+   "due_ist": "2026-11-24 12:30",
+   "status": "published",
+   "media_id": "18097543439682324",
+   "id": "18097543439682324",
+   "permalink": "https://www.instagram.com/reel/DgHUj9-Ei34/",
+   "timestamp": "2026-11-24T07:00:02+0000"
+  },
+  {
+   "folder": "2026-11-24-b",
+   "due_ist": "2026-11-24 19:00",
+   "status": "published",
+   "media_id": "18150099913584848",
+   "id": "18150099913584848",
+   "permalink": "https://www.instagram.com/reel/DgH9WcwAnZu/",
+   "timestamp": "2026-11-24T13:30:02+0000"
+  },
+  {
+   "folder": "2026-11-25-a",
+   "due_ist": "2026-11-25 12:30",
+   "status": "published",
+   "media_id": "18126871345986196",
+   "id": "18126871345986196",
+   "permalink": "https://www.instagram.com/reel/DgJ1gkpgONA/",
+   "timestamp": "2026-11-25T07:00:01+0000"
+  },
+  {
+   "folder": "2026-11-25-b",
+   "due_ist": "2026-11-25 19:00",
+   "status": "published",
+   "media_id": "17928145167447397",
+   "id": "17928145167447397",
+   "permalink": "https://www.instagram.com/reel/DgKiJEgpKRh/",
+   "timestamp": "2026-11-25T13:30:03+0000"
+  },
+  {
+   "folder": "2026-11-26-a",
+   "due_ist": "2026-11-26 12:30",
+   "status": "published",
+   "media_id": "18122917051758849",
+   "id": "18122917051758849",
+   "permalink": "https://www.instagram.com/reel/DgMaTenSkkU/",
+   "timestamp": "2026-11-26T07:00:03+0000"
+  },
+  {
+   "folder": "2026-11-26-b",
+   "due_ist": "2026-11-26 19:00",
+   "status": "published",
+   "media_id": "18197575390398757",
+   "id": "18197575390398757",
+   "permalink": "https://www.instagram.com/reel/DgNG7-FT19V/",
+   "timestamp": "2026-11-26T13:30:02+0000"
+  }
+ ]
+}
