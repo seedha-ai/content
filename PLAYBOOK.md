@@ -6,7 +6,7 @@ Brand: Ink Indigo #16164A, Haldi #F5B800, Chalk #F4F6FA. Fonts: Instrument Serif
 ## Aim and scoreboard
 Aim: grow @seedha.ai to its full potential as India's simplest AI-for-students page. Learn, understand, improvise, repeat, twice a week.
 - **North star:** followers.
-- **Leading signals per reel:** reach, shares per 1,000 reach, saves per 1,000 reach, follows gained. Reach shows the hook and format work; shares and saves show the value; follows show the page promise works.
+- **Leading signals per reel (in this order):** skip rate (`reels_skip_rate`, % who leave in the first 3 s; target under 60%), average watch time (`ig_reels_avg_watch_time`), then reach, shares and saves per 1,000 reach, follows gained. Reach shows the hook and format work; shares and saves show the value; follows show the page promise works.
 - **Weekly target:** beat last week's median reach per reel and shares per 1,000 reach. If two weeks in a row miss, change the format, not just the topic.
 - **Milestones:** first 100 followers, then 1,000 (trial reels and carousels come back here), then 10,000.
 - Every decision cites a number from metrics/. Gut feel is not a reason.
@@ -37,7 +37,17 @@ Similar pages to track weekly (fill in and keep updated: handle, followers, what
 - @toolslab.ai (53.6K, faceless like us): viral = AI vs original visual comparisons (1.2M to 2.9M). Daily = "Don't pay until you see this" free vs paid lists, tool lists, same prompt in two tools. Typical 0.5K to 5K views.
 - @arvind.techies (374K), @techyrohit.ai (129K), @youcantoo.ai: Indian AI tech creators to review next week (Scrumball AI ranking, Nov 2026).
 
+## Root cause found (27 Nov 2026)
+Retention metrics showed skip rates of 80 to 100% (median about 90%) and average watch time of 0.8 to 2.9 s on our 15 s reels. Every reel got one test batch of 10 to 120 people, then stopped. The old reels opened on an empty dark frame or a small static card. Nothing stopped the scroll.
+Rules from now on:
+- Frame 0 shows the full hook in huge bold type on Haldi yellow. Never an empty, dark or faded first frame.
+- Something moves or changes at least every 0.5 s.
+- 8 to 11 s total; the last frame loops into the first.
+- Use `tools/fast_reel.py` (kinds: fix, list, trick). The old reel_gen.py and slides_reel.py formats are retired.
+
 ## Formats (tools/)
+- **Fast reels (current)** `python3 fast_reel.py spec.json out.mp4`. Examples: `tools/specs/example_fast_fix.json` (hook, bad prompt and generic reply stamped, better prompt and reply, CTA), `example_fast_list.json` (hook, one big card per item), `example_fast_trick.json` (hook, instead of, say this). Keep each card under about 90 characters and the hook under about 60.
+Older formats, kept for reference only:
 - **Prompt-fix reel** (`audio_gen.py` + `reel_gen.py`, spec like `tools/specs/example_prompt_reel.json`): hook, bad prompt, fix (3 items), better prompt, result, CTA. 15 s with original scored audio. Keep h1 under 30 characters (or 3 lines), p2 and o2 under about 100 characters each, so the payoff lands by about 12 s.
 - **Slide reel** (`carousel.py` with `REEL=1` + `slides_reel.py`, spec like `tools/specs/example_slides.json`): cover plus 3 slides plus CTA, with auto-advance, a progress bar and an original beat. About 16 s. Use it for news, lists and cheat sheets.
 
@@ -63,4 +73,5 @@ Never like, follow or comment from the user's personal profile. Never post anyth
 | 16 to 18 Nov | Mixed reel, carousel and static | Feed posts reached 0. Reel reached 57. |
 | 19 to 20 Nov | All reels: prompt-fix at noon, slide reels at 7 PM | Prompt-fix reels reached 26 to 57; slide reels 9 to 13; static reels 9. 0 shares, 0 follows. Prompt-fix wins. |
 | 16 to 21 Nov (full week) | Reels only from 19 Nov | Best: "5 prompts to save" slide list 84 reach, 1 save; prompt-fix 47 to 57; jobs stat 45. Worst: research news 9, tool explainer 14. 0 followers, 0 shares. Topic beats format: copyable lists, career pain, hard numbers win. |
-| 3 to 9 Dec | a = prompt-fix on career and study pain; b = "N prompts to save" lists plus 2 news (Google AI Plus deadline, AI in schools); c = new "One trick" 12 s reels (shorter test) | (fill from metrics) |
+| 27 Nov | Root cause: skip rate 80 to 100%, avg watch 0.8 to 2.9 s. Rebuilt every queued reel (27 Nov to 9 Dec) in the fast format, and 3 reels a day from 27 Nov. | Judge on skip rate first: target under 60%. |
+| 3 to 9 Dec (planned before the rebuild) | a = prompt-fix on career and study pain; b = "N prompts to save" lists plus 2 news (Google AI Plus deadline, AI in schools); c = new "One trick" 12 s reels (shorter test) | (fill from metrics) |
