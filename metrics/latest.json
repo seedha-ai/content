@@ -1,13 +1,51 @@
 {
- "at_ist": "2026-11-25 20:30",
+ "at_ist": "2026-11-26 20:30",
  "account": {
   "id": "17841480311440495",
   "followers_count": 0,
   "follows_count": 4,
-  "media_count": 19,
+  "media_count": 21,
   "username": "seedha.ai"
  },
  "posts": [
+  {
+   "id": "18197575390398757",
+   "media_type": "VIDEO",
+   "media_product_type": "REELS",
+   "permalink": "https://www.instagram.com/reel/DgNG7-FT19V/",
+   "timestamp": "2026-11-26T13:30:02+0000",
+   "like_count": 0,
+   "comments_count": 0,
+   "hook": "A free AI course with a Government of India certificate.",
+   "insights": {
+    "reach": 0,
+    "views": 4,
+    "saved": 0,
+    "shares": 0,
+    "likes": 0,
+    "comments": 0,
+    "total_interactions": 0
+   }
+  },
+  {
+   "id": "18122917051758849",
+   "media_type": "VIDEO",
+   "media_product_type": "REELS",
+   "permalink": "https://www.instagram.com/reel/DgMaTenSkkU/",
+   "timestamp": "2026-11-26T07:00:03+0000",
+   "like_count": 0,
+   "comments_count": 0,
+   "hook": "Your English is fine. You just need practice.",
+   "insights": {
+    "reach": 1,
+    "views": 1,
+    "saved": 0,
+    "shares": 0,
+    "likes": 0,
+    "comments": 0,
+    "total_interactions": 0
+   }
+  },
   {
    "id": "17928145167447397",
    "media_type": "VIDEO",
@@ -18,8 +56,8 @@
    "comments_count": 0,
    "hook": "Learn AI basics in 30 days, free.",
    "insights": {
-    "reach": 6,
-    "views": 16,
+    "reach": 50,
+    "views": 71,
     "saved": 1,
     "shares": 0,
     "likes": 0,
@@ -94,7 +132,7 @@
    "comments_count": 0,
    "hook": "Stop using one AI tool for everything.",
    "insights": {
-    "reach": 10,
+    "reach": 11,
     "views": 14,
     "saved": 0,
     "shares": 0,
@@ -113,7 +151,7 @@
    "comments_count": 0,
    "hook": "Prompt of the day.",
    "insights": {
-    "reach": 94,
+    "reach": 95,
     "views": 113,
     "saved": 0,
     "shares": 0,
