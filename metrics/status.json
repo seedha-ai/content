@@ -1,24 +1,15 @@
 {
- "updated_ist": "2026-11-27 19:00",
- "queued_count": 37,
- "queued_days": 13,
+ "updated_ist": "2026-11-27 21:30",
+ "queued_count": 36,
+ "queued_days": 12,
  "last_queued_day": "2026-12-09",
  "next": {
-  "folder": "2026-11-27-c",
-  "due_ist": "2026-11-27 21:30",
+  "folder": "2026-11-28-a",
+  "due_ist": "2026-11-28 12:30",
   "status": "queued"
  },
  "failed": [],
  "recent_published": [
-  {
-   "folder": "2026-11-25-a",
-   "due_ist": "2026-11-25 12:30",
-   "status": "published",
-   "media_id": "18126871345986196",
-   "id": "18126871345986196",
-   "permalink": "https://www.instagram.com/reel/DgJ1gkpgONA/",
-   "timestamp": "2026-11-25T07:00:01+0000"
-  },
   {
    "folder": "2026-11-25-b",
    "due_ist": "2026-11-25 19:00",
@@ -63,6 +54,15 @@
    "id": "17925323370451866",
    "permalink": "https://www.instagram.com/reel/DgPupFEg4uV/",
    "timestamp": "2026-11-27T13:30:04+0000"
+  },
+  {
+   "folder": "2026-11-27-c",
+   "due_ist": "2026-11-27 21:30",
+   "status": "published",
+   "media_id": "18121049591610987",
+   "id": "18121049591610987",
+   "permalink": "https://www.instagram.com/reel/DgP85YcgCJ6/",
+   "timestamp": "2026-11-27T16:00:02+0000"
   }
  ]
 }
