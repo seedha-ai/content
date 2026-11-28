@@ -1,13 +1,123 @@
 {
- "at_ist": "2026-11-27 01:36",
+ "at_ist": "2026-11-28 20:30",
  "account": {
   "id": "17841480311440495",
-  "followers_count": 0,
+  "followers_count": 1,
   "follows_count": 4,
-  "media_count": 21,
+  "media_count": 26,
   "username": "seedha.ai"
  },
  "posts": [
+  {
+   "id": "18116846401876212",
+   "media_type": "VIDEO",
+   "media_product_type": "REELS",
+   "permalink": "https://www.instagram.com/reel/DgSQhwXuVnM/",
+   "timestamp": "2026-11-28T13:30:03+0000",
+   "like_count": 0,
+   "comments_count": 0,
+   "hook": "5 AI mistakes students make.",
+   "insights": {
+    "ig_reels_avg_watch_time": 1157,
+    "reels_skip_rate": 58.3,
+    "ig_reels_video_view_total_time": 9260,
+    "reach": 7,
+    "views": 12,
+    "saved": 0,
+    "shares": 0,
+    "likes": 0,
+    "comments": 0,
+    "total_interactions": 0
+   }
+  },
+  {
+   "id": "18112093250575655",
+   "media_type": "VIDEO",
+   "media_product_type": "REELS",
+   "permalink": "https://www.instagram.com/reel/DgRj5IjRc_9/",
+   "timestamp": "2026-11-28T07:00:03+0000",
+   "like_count": 0,
+   "comments_count": 0,
+   "hook": "Stop googling Excel formulas. Describe your sheet instead.",
+   "insights": {
+    "ig_reels_avg_watch_time": 1332,
+    "reels_skip_rate": 94.6,
+    "ig_reels_video_view_total_time": 122624,
+    "reach": 81,
+    "views": 101,
+    "saved": 0,
+    "shares": 0,
+    "likes": 0,
+    "comments": 0,
+    "total_interactions": 0
+   }
+  },
+  {
+   "id": "18121049591610987",
+   "media_type": "VIDEO",
+   "media_product_type": "REELS",
+   "permalink": "https://www.instagram.com/reel/DgP85YcgCJ6/",
+   "timestamp": "2026-11-27T16:00:02+0000",
+   "like_count": 0,
+   "comments_count": 0,
+   "hook": "Ask for a table.",
+   "insights": {
+    "ig_reels_avg_watch_time": 1011,
+    "reels_skip_rate": 95.8,
+    "ig_reels_video_view_total_time": 71809,
+    "reach": 65,
+    "views": 74,
+    "saved": 0,
+    "shares": 0,
+    "likes": 0,
+    "comments": 0,
+    "total_interactions": 0
+   }
+  },
+  {
+   "id": "17925323370451866",
+   "media_type": "VIDEO",
+   "media_product_type": "REELS",
+   "permalink": "https://www.instagram.com/reel/DgPupFEg4uV/",
+   "timestamp": "2026-11-27T13:30:04+0000",
+   "like_count": 0,
+   "comments_count": 0,
+   "hook": "India launched three AI models of its own: Eka-1, Dhir-2B and Dhir-5B.",
+   "insights": {
+    "ig_reels_avg_watch_time": 4423,
+    "reels_skip_rate": 100,
+    "ig_reels_video_view_total_time": 17692,
+    "reach": 3,
+    "views": 4,
+    "saved": 0,
+    "shares": 0,
+    "likes": 0,
+    "comments": 0,
+    "total_interactions": 0
+   }
+  },
+  {
+   "id": "18097474820501856",
+   "media_type": "VIDEO",
+   "media_product_type": "REELS",
+   "permalink": "https://www.instagram.com/reel/DgO_GgituCc/",
+   "timestamp": "2026-11-27T07:00:06+0000",
+   "like_count": 0,
+   "comments_count": 0,
+   "hook": "Your email to HR gets ignored because it sounds like every other email.",
+   "insights": {
+    "ig_reels_avg_watch_time": 1838,
+    "reels_skip_rate": 90,
+    "ig_reels_video_view_total_time": 93769,
+    "reach": 45,
+    "views": 54,
+    "saved": 0,
+    "shares": 0,
+    "likes": 0,
+    "comments": 0,
+    "total_interactions": 0
+   }
+  },
   {
    "id": "18197575390398757",
    "media_type": "VIDEO",
@@ -18,11 +128,11 @@
    "comments_count": 0,
    "hook": "A free AI course with a Government of India certificate.",
    "insights": {
-    "ig_reels_avg_watch_time": 2215,
-    "reels_skip_rate": 85.7,
-    "ig_reels_video_view_total_time": 59826,
-    "reach": 23,
-    "views": 32,
+    "ig_reels_avg_watch_time": 2032,
+    "reels_skip_rate": 90.6,
+    "ig_reels_video_view_total_time": 65040,
+    "reach": 28,
+    "views": 36,
     "saved": 0,
     "shares": 0,
     "likes": 0,
@@ -40,16 +150,16 @@
    "comments_count": 0,
    "hook": "Your English is fine. You just need practice.",
    "insights": {
-    "ig_reels_avg_watch_time": 1250,
+    "ig_reels_avg_watch_time": 3862,
     "reels_skip_rate": 100,
-    "ig_reels_video_view_total_time": 6251,
-    "reach": 5,
-    "views": 5,
-    "saved": 0,
+    "ig_reels_video_view_total_time": 23176,
+    "reach": 6,
+    "views": 8,
+    "saved": 1,
     "shares": 0,
     "likes": 0,
     "comments": 0,
-    "total_interactions": 0
+    "total_interactions": 1
    }
   },
   {
